@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Document</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="header"><div class="inner">
+  <div class="brand">Votre document</div>
+  <a class="btn" href="content.md" target="_blank" rel="noopener">Voir le Markdown</a>
+</div></header>
+<main id="content"><p>Chargement…</p></main>
+<footer class="footer"><div class="inner">Généré pour GitHub Pages</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+(async function() {
+  const resp = await fetch('content.md');
+  const text = await resp.text();
+  const html = marked.parse(text);
+  document.getElementById('content').innerHTML = html;
+})();
+</script>
+</body>
+</html>
